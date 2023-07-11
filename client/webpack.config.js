@@ -17,12 +17,55 @@ module.exports = () => {
       filename: '[name].bundle.js',
       path: path.resolve(__dirname, 'dist'),
     },
-    plugins: [
-      
+    plugins: [ 
+      new HtmlWebpackPlugin({
+        template: './src/index.html',
+        filename: 'index.html', // idk if we need this?
+        chunks: ['main'], // idk if we need this?
+      }), 
+      new WebpackPwaManifest({
+        name: 'Jate',
+        short_name: 'Jate',
+        description: 'A simple text editor',
+        display: 'standalone',
+        background_color: '#1e1e1e',
+        theme_color: '#1e1e1e',
+        start_url: '/',
+        publicPath: '/',
+        fingerprints: false,
+        inject: true,
+        icons: [
+          {
+            src: path.resolve('src/images/icon.png'),
+            sizes: [96, 128, 192, 256, 384, 512], 
+            destination: path.join('assets', 'icons'),
+          },
+        ],
+      }),
+      new InjectManifest({
+        swSrc: './src-sw.js',
+        swDest: 'sw.js',
+      }),
     ],
 
     module: {
       rules: [
+        {
+          test: /\.css$/i,
+          use: ['style-loader', 'css-loader'],
+        },
+        {
+          test:/\.m?js$/,
+          exclude: /node_modules/,
+          use: {
+            loader: 'babel-loader',
+            options: {
+              presets: ['@babel/present-env'],
+              plugins: ['@babel/plugin-transform-runtime',
+            `@babel/plugin-proposal-object-rest-spread`]
+            }
+          }
+        }
         
       ],
     },
