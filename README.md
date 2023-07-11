@@ -2,8 +2,9 @@
    [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)]
 
   ## Description
-   
-   
+   This application is a web text editor that works with or without the internet. Users can create noted and retrieve them for later use. The application uses webpack, a service worker and Cache. 
+
+   Deployed URl: 
 
   ## Table of Contents
   *[Installation](#installation)
@@ -15,11 +16,11 @@
 
   ## Installation
  
-  
+  This application uses many npm packages and a number of methods and store data.
 
   ## Usage
   
-  
+  Take notes anytime and anywhere and always be able to acess them. 
 
   ## License 
 
@@ -27,12 +28,10 @@
   [MIT](https://opensource.org/licenses/MIT)
 
   ## Contributing
-  
-   
+  clone and code.
 
   ## Tests
-  
-  
+  n/a
 
   ## Questions 
 
