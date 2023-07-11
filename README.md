@@ -4,7 +4,8 @@
   ## Description
    This application is a web text editor that works with or without the internet. Users can create noted and retrieve them for later use. The application uses webpack, a service worker and Cache. 
 
-   Deployed URl: 
+   Deployed URl: https://floating-chamber-64939-662d17fc477d.herokuapp.com/
+
 
   ## Table of Contents
   *[Installation](#installation)
